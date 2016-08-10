@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# lock
+dbus-send \
+	--type=method_call \
+	--dest=org.gnome.ScreenSaver \
+	/org/gnome/ScreenSaver org.gnome.ScreenSaver.Lock
+
+# delay to finish animation
+sleep 0.8
+
+# suspend
+systemctl suspend
